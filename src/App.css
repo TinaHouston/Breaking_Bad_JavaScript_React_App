@@ -1,38 +1,88 @@
-.App {
+/* .App {
+  text-align: center;
+} */
+
+h1 {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.character-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-around;
 }
 
-.App-link {
-  color: #61dafb;
+.character-list {
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.episode-list {
+  padding-right: 30px;
+}
+
+.episode-details {
+  position: -webkit-sticky; /* for Safari */
+  padding-right: 30px;
+  padding-left: 30px;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  width: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  padding-bottom: 30px;
+  margin: 80px;
+}
+
+.character-details {
+  position: -webkit-sticky; /* for Safari */
+  padding-right: 30px;
+  padding-left: 30px;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  width: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  padding-bottom: 30px;
+  margin: 40px;
+}
+
+/* .episode-list > ul {
+  height: 80vh;
+  overflow: scroll;
+} */
+
+/* .character-list > ul {
+  overflow: scroll;
+  height: 80vh;
+} */
+
+h2 {
+  position: sticky;
+  position: -webkit-sticky; /* for Safari */
+  top: 0;
+  background-color: white;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  border-radius: 8px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+}
+
+li:hover {
+  font-size: 20px;
+  cursor: grab;
+}
+
+ul {
+  padding:0;
+  margin:0;
 }
