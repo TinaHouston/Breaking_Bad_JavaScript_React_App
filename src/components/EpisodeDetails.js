@@ -1,6 +1,6 @@
 import React from 'react';
 
-const EpisodeDetails = ({episode, onCharacterSelect}) => {
+const EpisodeDetails = ({episode, onWatchLater}) => {
     if(!episode) {
         return(null)
     }
@@ -20,6 +20,10 @@ const EpisodeDetails = ({episode, onCharacterSelect}) => {
             <ul>
                 {characters}
             </ul>
+            <br></br>
+            <button onClick={() => {onWatchLater(episode)}}>
+                {episode.favourite ? 'Delete from Watchlist' : 'Add to Watchlist'}
+            </button>
         </div>
     )
 }

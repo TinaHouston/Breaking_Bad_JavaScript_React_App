@@ -3,6 +3,8 @@ import CharacterList from "../components/CharacterList";
 import CharacterDetails from "../components/CharacterDetails";
 import EpisodeList from "../components/EpisodeList";
 import EpisodeDetails from "../components/EpisodeDetails";
+import FavouriteCharacter from "../components/FavouriteCharacter";
+import WatchLater from "../components/WatchLater";
 
 const CharacterContainer = () => {
 
@@ -34,12 +36,34 @@ const CharacterContainer = () => {
         setSelectedEpisode(episode)
     };
 
+    const handleFavouriteCharacter = (updatedCharacter) => {
+        const updatedCharacters = characters.map((character) => {
+          if (character.name === updatedCharacter.name){
+            character.favourite = !character.favourite
+          }
+          return character
+        })
+        setCharacters(updatedCharacters)
+      }
+
+    const handleWatchLater = (updatedEpisode) => {
+        const updatedEpisodes = episodes.map((episode) => {
+          if (episode.title === updatedEpisode.title){
+            episode.favourite = !episode.favourite
+          }
+          return episode
+        })
+        setEpisodes(updatedEpisodes)
+      }
+
     return (
         <div className="character-container">
             <CharacterList characters={characters} onCharacterSelect={handleSelectedCharacter}/>
             <EpisodeList episodes={episodes} onEpisodeSelect={handleSelectedEpisode}/>
-            <CharacterDetails character={selectedCharacter}/>
-            <EpisodeDetails episode={selectedEpisode} />
+            <CharacterDetails character={selectedCharacter} onFavouriteCharacter={handleFavouriteCharacter}/>
+            <EpisodeDetails episode={selectedEpisode} onWatchLater={handleWatchLater}/>
+            <FavouriteCharacter characters={characters} onCharacterSelect={handleSelectedCharacter}/>
+            <WatchLater episodes={episodes} onEpisodeSelect={handleSelectedEpisode}/>
         </div>
     )
 }
